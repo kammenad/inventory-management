@@ -94,15 +94,17 @@ const selectLanguage = (locale) => {
 }
 
 .language-button {
+  /* Fills the sidebar footer width */
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   font-family: inherit;
   font-size: 0.875rem;
   color: #334155;
@@ -119,6 +121,8 @@ const selectLanguage = (locale) => {
 }
 
 .language-label {
+  flex: 1;
+  text-align: left;
   font-weight: 500;
 }
 
@@ -134,7 +138,9 @@ const selectLanguage = (locale) => {
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  /* Footer sits at the bottom of the screen, so open upward to stay visible */
+  bottom: calc(100% + var(--space-2));
+  left: 0;
   right: 0;
   min-width: 160px;
   background: white;
